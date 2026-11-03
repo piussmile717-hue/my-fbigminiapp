@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyFBIGAccess</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+body {
+  margin: 0;
+  padding: 25px;
+  font-family: Arial, sans-serif;
+  background: #10131c;
+  color: white;
+  text-align: center;
+}
+.container { margin-top: 65px; }
+h1 { font-size: 27px; }
+p { color: #b8bdca; line-height: 1.6; }
+button {
+  width: 100%;
+  padding: 17px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.facebook { background: #1877f2; color: white; }
+.instagram { background: #d94691; color: white; }
+.status { font-size: 13px; margin-top: 25px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>MyFBIGAccess</h1>
+<p>Your personal social media dashboard.</p>
+
+<button class="facebook" onclick="connect('Facebook')">
+Connect Facebook
+</button>
+
+<button class="instagram" onclick="connect('Instagram')">
+Connect Instagram
+</button>
+
+<p class="status" id="status">
+Your accounts are not connected yet.
+</p>
+</div>
+
+<script>
+const tg = window.Telegram.WebApp;
+tg.ready();
+tg.expand();
+
+function connect(platform) {
+  document.getElementById("status").textContent =
+  platform + " authentication will be configured securely.";
+}
+</script>
+</body>
+</html>
